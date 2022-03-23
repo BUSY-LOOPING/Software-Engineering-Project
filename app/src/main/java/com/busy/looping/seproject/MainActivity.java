@@ -5,6 +5,7 @@ import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +14,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        LoginDatabase loginDatabase = LoginDatabase.getInstance(this);
+        loginDatabase.getWritableDatabase();
+        loginDatabase.close();
 
         startActivity(new Intent(this, LoginActivity.class));
         findViewById(R.id.txt1).setOnClickListener(v -> {
