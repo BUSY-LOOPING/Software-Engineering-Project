@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingHorizontal="20dp"
+    tools:context=".SignUp_SignInActivity">
+
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:rotationY="180"
+        android:src="@drawable/ic_right_round"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/signup_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/title"
+        android:fontFamily="@font/nexa_extra_bold"
+        android:text="Sign Up"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backBtn" />
+
+    <TextView
+        android:id="@+id/email_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/nexa_book"
+        android:text="Email"
+        android:textColor="#666666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signup_txt" />
+
+    <EditText
+        android:id="@+id/email_et"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/stroked_bg"
+        android:fontFamily="sans-serif"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:textColor="#3A3535"
+        app:circularflow_radiusInDP="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_txt" />
+
+    <TextView
+        android:id="@+id/password_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/nexa_book"
+        android:text="Password"
+        android:textColor="#666666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_et" />
+
+    <EditText
+        android:id="@+id/passwordEt"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/stroked_bg"
+        android:fontFamily="sans-serif"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:textColor="#3A3535"
+        app:circularflow_radiusInDP="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_txt" />
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nexa_regular"
+        android:text="@string/don_t_have_an_account"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEt" />
+
+    <TextView
+        android:id="@+id/signUpBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/nexa_regular"
+        android:text="@string/sign_up"
+        android:textColor="#00BCD4"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/t1"
+        app:layout_constraintTop_toTopOf="@+id/t1" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/organizerCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:buttonTint="#525252"
+        android:contentDescription="@string/in_sign_up"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEt" />
+
+    <TextView
+        android:id="@+id/organizerTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/in_sign_up"
+        android:fontFamily="@font/nexa_book"
+        android:text="Organizer"
+        android:textColor="#666666"
+        app:layout_constraintBottom_toBottomOf="@+id/organizerCheckBox"
+        app:layout_constraintStart_toEndOf="@+id/organizerCheckBox"
+        app:layout_constraintTop_toTopOf="@+id/organizerCheckBox" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/customerCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:buttonTint="#525252"
+        android:checked="true"
+        android:contentDescription="@string/in_sign_up"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/organizerCheckBox" />
+
+    <TextView
+        android:id="@+id/customerTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/in_sign_up"
+        android:fontFamily="@font/nexa_book"
+        android:text="Customer"
+        android:textColor="#666666"
+        app:layout_constraintBottom_toBottomOf="@+id/customerCheckBox"
+        app:layout_constraintStart_toEndOf="@+id/customerCheckBox"
+        app:layout_constraintTop_toTopOf="@+id/customerCheckBox" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#525252"
+        android:fontFamily="@font/nexa_book"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="20dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
