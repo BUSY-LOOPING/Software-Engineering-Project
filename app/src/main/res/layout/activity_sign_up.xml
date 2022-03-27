@@ -70,21 +70,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_et" />
 
-    <EditText
-        android:id="@+id/passwordEt"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordEtContainer"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/stroked_bg"
-        android:fontFamily="sans-serif"
-        android:inputType="textPassword"
-        android:maxLines="1"
-        android:padding="10dp"
-        android:textColor="#3A3535"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
         app:circularflow_radiusInDP="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/password_txt"
+        app:passwordToggleDrawable="@drawable/eye"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/text_2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/stroked_bg"
+            android:fontFamily="sans-serif"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:padding="10dp"
+            android:textColor="#3A3535" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--    <EditText-->
+    <!--        android:drawableEnd="@drawable/eye"-->
+    <!--        android:id="@+id/passwordEt"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginTop="8dp"-->
+    <!--        android:background="@drawable/stroked_bg"-->
+    <!--        android:fontFamily="sans-serif"-->
+    <!--        android:inputType="textPassword"-->
+    <!--        android:maxLines="1"-->
+    <!--        android:padding="10dp"-->
+    <!--        android:textColor="#3A3535"-->
+    <!--        app:circularflow_radiusInDP="5dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/password_txt" />-->
 
     <TextView
         android:id="@+id/t1"
@@ -96,7 +124,7 @@
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEt" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordEtContainer" />
 
     <TextView
         android:id="@+id/signUpBtn"
@@ -118,7 +146,7 @@
         android:buttonTint="#525252"
         android:contentDescription="@string/in_sign_up"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEt" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordEtContainer" />
 
     <TextView
         android:id="@+id/organizerTxt"
@@ -156,6 +184,7 @@
         app:layout_constraintTop_toTopOf="@+id/customerCheckBox" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/continue_btn"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginBottom="5dp"
