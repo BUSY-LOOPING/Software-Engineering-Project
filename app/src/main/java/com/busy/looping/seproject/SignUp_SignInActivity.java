@@ -124,8 +124,8 @@ public class SignUp_SignInActivity extends AppCompatActivity {
                 if (validateFields()) {
                     if (signInToDB(this, email, password)) {
                         Toast.makeText(this, "Sign in successful!", Toast.LENGTH_SHORT).show();
-                        finish();
                         setResult(LOGIN_SUCCESSFUL);
+                        finish();
                     } else {
                         Toast.makeText(this, "Sign in failed!", Toast.LENGTH_SHORT).show();
                     }
@@ -134,8 +134,8 @@ public class SignUp_SignInActivity extends AppCompatActivity {
                 if (validateFields())
                     if (signUpToDB(this, email, password, isCustomer)) {
                         Toast.makeText(this, "Sign up successful!", Toast.LENGTH_SHORT).show();
-                        finish();
                         setResult(SIGNUP_SUCCESSFUL);
+                        finish();
                     } else {
                         Toast.makeText(this, "Sign up failed!", Toast.LENGTH_SHORT).show();
                     }

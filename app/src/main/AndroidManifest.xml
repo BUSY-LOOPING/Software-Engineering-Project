@@ -13,7 +13,6 @@
             android:name=".SignUp_SignInActivity"
             android:exported="false" />
         <activity
-            android:parentActivityName=".MainActivity"
             android:name=".LoginActivity"
             android:exported="false" />
 

@@ -15,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.busy.looping.seproject.databinding.ActivityLoginBinding;
 import com.google.android.material.textfield.TextInputEditText;
@@ -114,7 +115,8 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RESULT_OK && resultCode == SignUp_SignInActivity.LOGIN_SUCCESSFUL) {
+        Toast.makeText(this, "reqCode = " + requestCode + " res= " +resultCode, Toast.LENGTH_SHORT).show();
+        if (resultCode == RESULT_OK && requestCode == SignUp_SignInActivity.LOGIN_SUCCESSFUL) {
             finish();
         }
     }
