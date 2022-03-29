@@ -47,8 +47,6 @@ public class LoginDatabase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         try {
             String sql = FileReaderUtil.readTextFile(context.getResources().openRawResource(R.raw.create_table));
-            Toast.makeText(context, "here", Toast.LENGTH_SHORT).show();
-
             String[] queries = sql.split(";;;");
 
             for (String query : queries) {

@@ -2,6 +2,7 @@ package com.busy.looping.seproject;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -124,7 +125,9 @@ public class SignUp_SignInActivity extends AppCompatActivity {
                 if (validateFields()) {
                     if (signInToDB(this, email, password)) {
                         Toast.makeText(this, "Sign in successful!", Toast.LENGTH_SHORT).show();
-                        setResult(LOGIN_SUCCESSFUL);
+                        SharedPreferences.Editor editor = getSharedPreferences("signed_in", MODE_PRIVATE).edit();
+                        editor.putBoolean("signed_in", true);
+                        editor.apply();
                         finish();
                     } else {
                         Toast.makeText(this, "Sign in failed!", Toast.LENGTH_SHORT).show();

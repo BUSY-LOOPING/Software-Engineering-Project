@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         loginDatabase.getWritableDatabase();
         loginDatabase.close();
 
-        startActivity(new Intent(this, LoginActivity.class));
+        startActivityForResult(new Intent(this, LoginActivity.class), 1);
         findViewById(R.id.txt1).setOnClickListener(v -> {
             if (((TextView)v).getText().equals("Book Events")) {
                 ((TextView)v).setText("Organize Events");

@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
@@ -53,6 +54,16 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         init();
         listeners();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences sharedPreferences = getSharedPreferences("signed_in", MODE_PRIVATE);
+        if (sharedPreferences.getBoolean("signed_in", false)) {
+            finish();
+        }
+
     }
 
     private void listeners() {
@@ -116,8 +127,15 @@ public class LoginActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Toast.makeText(this, "reqCode = " + requestCode + " res= " +resultCode, Toast.LENGTH_SHORT).show();
-        if (resultCode == RESULT_OK && requestCode == SignUp_SignInActivity.LOGIN_SUCCESSFUL) {
-            finish();
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK) {
+                if (data != null) {
+                    if (data.getIntExtra("state", -1) == SignUp_SignInActivity.LOGIN_SUCCESSFUL) {
+                        finish();
+                    }
+                }
+            }
         }
     }
+
 }
