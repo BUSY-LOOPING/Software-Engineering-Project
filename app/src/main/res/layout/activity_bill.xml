@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bookingModel"
+            type="com.busy.looping.seproject.models.BookingModel" />
+
+        <variable
+            name="eventModel"
+            type="com.busy.looping.seproject.models.EventModel" />
+    </data>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".BillActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:liftOnScroll="true">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolBar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:navigationIcon="@drawable/ic_icon_ionic_ios_arrow_back"
+                app:theme="@style/ToolBarStyle"
+                app:title="@{eventModel.eventName}" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <com.vipulasri.ticketview.TicketView
+                    android:id="@+id/ticketView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="600dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:ticketDividerType="dash"
+                    app:ticketElevation="5dp"
+                    app:ticketOrientation="horizontal"
+                    app:ticketScallopPositionPercent="30"
+                    app:ticketScallopRadius="10dp"
+                    app:ticketShowBorder="true"
+                    app:ticketShowDivider="true" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ticketView"
+                    app:layout_constraintEnd_toEndOf="@+id/ticketView"
+                    app:layout_constraintStart_toStartOf="@+id/ticketView"
+                    app:layout_constraintTop_toTopOf="@+id/ticketView">
+
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guide1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.21" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guide2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.3" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:src="@drawable/qr_code"
+                        app:layout_constraintBottom_toTopOf="@+id/guide1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toTopOf="@+id/guide2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/guide1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:autoSizeTextType="uniform"
+                            android:fontFamily="@font/nexa_regular"
+                            android:text="Booking ID"
+                            android:textColor="#8f8f8f"
+                            android:textSize="16sp"
+                            tools:targetApi="o" />
+
+                        <TextView
+                            android:id="@+id/orderId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:autoSizeTextType="uniform"
+                            android:fontFamily="@font/nexa_bold"
+                            android:text="@{bookingModel.bookingId}"
+                            android:textColor="#2f2f2f"
+                            android:textSize="17sp"
+                            tools:targetApi="o" />
+
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guide3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.4" />
+
+                    <LinearLayout
+                        android:id="@+id/linLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="30sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/guide2">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nexa_extra_bold"
+                                android:text="@{bookingModel.noTickets}"
+                                android:textColor="#303030"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nexa_book"
+                                android:text="Ticket"
+                                android:textColor="#a5a5a5"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="20sp"
+                            android:autoSizeMaxTextSize="18sp"
+                            android:autoSizeMinTextSize="10sp"
+                            android:autoSizeTextType="uniform"
+                            android:breakStrategy="balanced"
+                            android:fontFamily="@font/nexa_regular"
+                            android:gravity="center"
+                            android:text="@{eventModel.venue}"
+                            android:textColor="#979696"
+                            android:textSize="100sp"
+                            tools:targetApi="o" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/price_breakdown_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginHorizontal="4dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#f5f5f5"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintTop_toBottomOf="@+id/linLayout">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:fontFamily="@font/nexa_extra_light"
+                                android:text="@{`Ticket - ` + bookingModel.noTickets}"
+                                android:textColor="#727272" />
+
+                            <TextView
+                                android:id="@+id/totalCostAllTickets"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:fontFamily="@font/nexa_extra_light"
+                                android:text=""
+                                android:textColor="#727272" />
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:fontFamily="@font/nexa_extra_light"
+                                android:text="Tax"
+                                android:textColor="#727272" />
+
+                            <TextView
+                                android:id="@+id/taxTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:fontFamily="@font/nexa_extra_light"
+                                android:text=""
+                                android:textColor="#727272" />
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:fontFamily="@font/nexa_extra_light"
+                                android:text="Discount"
+                                android:textColor="#727272" />
+
+                            <TextView
+                                android:id="@+id/discountTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:text=""
+                                android:fontFamily="@font/nexa_extra_light"
+                                android:textColor="#727272" />
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:fontFamily="@font/nexa_extra_light"
+                                android:text="Additional Charges"
+                                android:textColor="#727272" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:fontFamily="@font/nexa_extra_light"
+                                android:text="\u20B9 0"
+                                android:textColor="#727272" />
+
+                        </FrameLayout>
+
+
+                    </LinearLayout>
+
+                    <FrameLayout
+                        app:layout_constraintTop_toBottomOf="@+id/price_breakdown_container"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="25dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:fontFamily="@font/nexa_bold"
+                            android:text="Total Amount"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/totalAmountTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:fontFamily="@font/nexa_bold"
+                            android:text=""
+                            android:textColor="@color/black" />
+
+                    </FrameLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

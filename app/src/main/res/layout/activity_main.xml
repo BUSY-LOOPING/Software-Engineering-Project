@@ -31,6 +31,7 @@
             android:textSize="23sp" />
 
         <ImageView
+            android:id="@+id/icon"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_centerVertical="true"
@@ -237,77 +238,6 @@
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/film_reel" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:fontFamily="@font/nexa_thin"
-                            android:text="Movies"
-                            android:textColor="@color/black"
-                            android:textSize="15sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/film_reel" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:fontFamily="@font/nexa_thin"
-                            android:text="Movies"
-                            android:textColor="@color/black"
-                            android:textSize="15sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/film_reel" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:fontFamily="@font/nexa_thin"
-                            android:text="Movies"
-                            android:textColor="@color/black"
-                            android:textSize="15sp" />
-
-                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -350,6 +280,8 @@
                     android:backgroundTint="@color/purple_200"
                     android:overScrollMode="never"
                     android:scrollbars="none">
+
+
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -618,222 +550,230 @@
                     android:textColor="#e893aa"
                     android:textSize="14sp" />
 
-                <HorizontalScrollView
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/popularEventsRecyclerView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt3"
                     android:layout_marginVertical="20dp"
-                    android:backgroundTint="@color/purple_200"
                     android:overScrollMode="never"
-                    android:scrollbars="none">
+                    android:layout_below="@+id/txt3"/>
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+<!--                <HorizontalScrollView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/txt3"-->
+<!--                    android:layout_marginVertical="20dp"-->
+<!--                    android:backgroundTint="@color/purple_200"-->
+<!--                    android:overScrollMode="never"-->
+<!--                    android:scrollbars="none">-->
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="horizontal">-->
 
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="150dp"
-                                android:layout_height="200dp"
-                                android:layout_marginHorizontal="10dp"
-                                android:backgroundTint="@color/black"
-                                app:cardCornerRadius="5dp">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="vertical">
-
-                                    <ImageView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="180dp"
-                                        android:scaleType="fitXY"
-                                        android:src="@drawable/parmish_verma_event" />
-
-                                    <RelativeLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="20dp">
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_centerVertical="true"
-                                            android:layout_marginStart="10dp"
-                                            android:fontFamily="@font/nexa_regular"
-                                            android:text="Fri, 25 Mar"
-                                            android:textColor="@color/white"
-                                            android:textSize="12sp" />
-
-                                    </RelativeLayout>
-
-                                </LinearLayout>
-
-                            </androidx.cardview.widget.CardView>
-
-                            <TextView
-                                android:layout_width="150dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/nexa_regular"
-                                android:text="Parmish Verma Live"
-                                android:textColor="#242424"
-                                android:textSize="15sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/nexa_light"
-                                android:text="Music Shows"
-                                android:textColor="#242424"
-                                android:textSize="12sp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="vertical">-->
 
 
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="150dp"
-                                android:layout_height="200dp"
-                                android:layout_marginEnd="10dp"
-                                android:backgroundTint="@color/black"
-                                app:cardCornerRadius="5dp">
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="150dp"-->
+<!--                                android:layout_height="200dp"-->
+<!--                                android:layout_marginHorizontal="10dp"-->
+<!--                                android:backgroundTint="@color/black"-->
+<!--                                app:cardCornerRadius="5dp">-->
 
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="vertical">
+<!--                                <LinearLayout-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:orientation="vertical">-->
 
-                                    <ImageView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="180dp"
-                                        android:scaleType="fitXY"
-                                        android:src="@drawable/gaurav_kapoor_event" />
+<!--                                    <ImageView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="180dp"-->
+<!--                                        android:scaleType="fitXY"-->
+<!--                                        android:src="@drawable/parmish_verma_event" />-->
 
-                                    <RelativeLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="20dp">
+<!--                                    <RelativeLayout-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="20dp">-->
 
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_centerVertical="true"
-                                            android:layout_marginStart="10dp"
-                                            android:fontFamily="@font/nexa_regular"
-                                            android:text="Sat, 19 Mar onwards"
-                                            android:textColor="@color/white"
-                                            android:textSize="12sp" />
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="wrap_content"-->
+<!--                                            android:layout_centerVertical="true"-->
+<!--                                            android:layout_marginStart="10dp"-->
+<!--                                            android:fontFamily="@font/nexa_regular"-->
+<!--                                            android:text="Fri, 25 Mar"-->
+<!--                                            android:textColor="@color/white"-->
+<!--                                            android:textSize="12sp" />-->
 
-                                    </RelativeLayout>
+<!--                                    </RelativeLayout>-->
 
-                                </LinearLayout>
+<!--                                </LinearLayout>-->
 
-                            </androidx.cardview.widget.CardView>
+<!--                            </androidx.cardview.widget.CardView>-->
 
-                            <TextView
-                                android:layout_width="150dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:maxLines="2"
-                                android:ellipsize="end"
-                                android:fontFamily="@font/nexa_regular"
-                                android:text="Gaurav Kapoor Live"
-                                android:textColor="#242424"
-                                android:textSize="15sp" />
+<!--                            <TextView-->
+<!--                                android:layout_width="150dp"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginStart="10dp"-->
+<!--                                android:layout_marginTop="5dp"-->
+<!--                                android:fontFamily="@font/nexa_regular"-->
+<!--                                android:text="Parmish Verma Live"-->
+<!--                                android:textColor="#242424"-->
+<!--                                android:textSize="15sp" />-->
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/nexa_light"
-                                android:text="Comedy Shows"
-                                android:textColor="#242424"
-                                android:textSize="12sp" />
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginStart="10dp"-->
+<!--                                android:layout_marginTop="5dp"-->
+<!--                                android:fontFamily="@font/nexa_light"-->
+<!--                                android:text="Music Shows"-->
+<!--                                android:textColor="#242424"-->
+<!--                                android:textSize="12sp" />-->
 
-                        </LinearLayout>
+<!--                        </LinearLayout>-->
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="150dp"
-                                android:layout_height="200dp"
-                                android:layout_marginEnd="10dp"
-                                android:backgroundTint="@color/black"
-                                app:cardCornerRadius="5dp">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="vertical">
-
-                                    <ImageView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="180dp"
-                                        android:scaleType="fitXY"
-                                        android:src="@drawable/alan_event" />
-
-                                    <RelativeLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="20dp">
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_centerVertical="true"
-                                            android:layout_marginStart="10dp"
-                                            android:fontFamily="@font/nexa_regular"
-                                            android:text="Fri, 25 Mar"
-                                            android:textColor="@color/white"
-                                            android:textSize="12sp" />
-
-                                    </RelativeLayout>
-
-                                </LinearLayout>
-
-                            </androidx.cardview.widget.CardView>
-
-                            <TextView
-                                android:layout_width="150dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/nexa_regular"
-                                android:maxLines="2"
-                                android:ellipsize="end"
-                                android:text="Sunburn Arena ft. ALAN WALKER"
-                                android:textColor="#242424"
-                                android:textSize="15sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/nexa_light"
-                                android:text="Concerts"
-                                android:textColor="#242424"
-                                android:textSize="12sp" />
-
-                        </LinearLayout>
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="vertical">-->
 
 
-                    </LinearLayout>
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="150dp"-->
+<!--                                android:layout_height="200dp"-->
+<!--                                android:layout_marginEnd="10dp"-->
+<!--                                android:backgroundTint="@color/black"-->
+<!--                                app:cardCornerRadius="5dp">-->
 
-                </HorizontalScrollView>
+<!--                                <LinearLayout-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:orientation="vertical">-->
+
+<!--                                    <ImageView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="180dp"-->
+<!--                                        android:scaleType="fitXY"-->
+<!--                                        android:src="@drawable/gaurav_kapoor_event" />-->
+
+<!--                                    <RelativeLayout-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="20dp">-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="wrap_content"-->
+<!--                                            android:layout_centerVertical="true"-->
+<!--                                            android:layout_marginStart="10dp"-->
+<!--                                            android:fontFamily="@font/nexa_regular"-->
+<!--                                            android:text="Sat, 19 Mar onwards"-->
+<!--                                            android:textColor="@color/white"-->
+<!--                                            android:textSize="12sp" />-->
+
+<!--                                    </RelativeLayout>-->
+
+<!--                                </LinearLayout>-->
+
+<!--                            </androidx.cardview.widget.CardView>-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="150dp"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="5dp"-->
+<!--                                android:ellipsize="end"-->
+<!--                                android:fontFamily="@font/nexa_regular"-->
+<!--                                android:maxLines="2"-->
+<!--                                android:text="Gaurav Kapoor Live"-->
+<!--                                android:textColor="#242424"-->
+<!--                                android:textSize="15sp" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="5dp"-->
+<!--                                android:fontFamily="@font/nexa_light"-->
+<!--                                android:text="Comedy Shows"-->
+<!--                                android:textColor="#242424"-->
+<!--                                android:textSize="12sp" />-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="vertical">-->
+
+
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="150dp"-->
+<!--                                android:layout_height="200dp"-->
+<!--                                android:layout_marginEnd="10dp"-->
+<!--                                android:backgroundTint="@color/black"-->
+<!--                                app:cardCornerRadius="5dp">-->
+
+<!--                                <LinearLayout-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:orientation="vertical">-->
+
+<!--                                    <ImageView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="180dp"-->
+<!--                                        android:scaleType="fitXY"-->
+<!--                                        android:src="@drawable/alan_event" />-->
+
+<!--                                    <RelativeLayout-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="20dp">-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="wrap_content"-->
+<!--                                            android:layout_centerVertical="true"-->
+<!--                                            android:layout_marginStart="10dp"-->
+<!--                                            android:fontFamily="@font/nexa_regular"-->
+<!--                                            android:text="Fri, 25 Mar"-->
+<!--                                            android:textColor="@color/white"-->
+<!--                                            android:textSize="12sp" />-->
+
+<!--                                    </RelativeLayout>-->
+
+<!--                                </LinearLayout>-->
+
+<!--                            </androidx.cardview.widget.CardView>-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="150dp"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_marginTop="5dp"-->
+<!--                                android:ellipsize="end"-->
+<!--                                android:fontFamily="@font/nexa_regular"-->
+<!--                                android:maxLines="2"-->
+<!--                                android:text="Sunburn Arena ft. ALAN WALKER"-->
+<!--                                android:textColor="#242424"-->
+<!--                                android:textSize="15sp" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="5dp"-->
+<!--                                android:fontFamily="@font/nexa_light"-->
+<!--                                android:text="Concerts"-->
+<!--                                android:textColor="#242424"-->
+<!--                                android:textSize="12sp" />-->
+
+<!--                        </LinearLayout>-->
+
+
+<!--                    </LinearLayout>-->
+
+<!--                </HorizontalScrollView>-->
 
             </RelativeLayout>
 

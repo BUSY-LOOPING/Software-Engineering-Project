@@ -59,11 +59,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        SharedPreferences sharedPreferences = getSharedPreferences("signed_in", MODE_PRIVATE);
-        if (sharedPreferences.getBoolean("signed_in", false)) {
+        if (LoginDatabase.getInstance(this).getCurrentSignedInUser() != null) {
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         }
-
     }
 
     private void listeners() {
@@ -74,6 +73,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         binding.skip.setOnClickListener(v -> {
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         });
     }
@@ -126,7 +126,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Toast.makeText(this, "reqCode = " + requestCode + " res= " +resultCode, Toast.LENGTH_SHORT).show();
         if (requestCode == 1) {
             if(resultCode == RESULT_OK) {
                 if (data != null) {

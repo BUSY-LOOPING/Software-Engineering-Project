@@ -3,18 +3,37 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android_SDK/platforms/android-31/data/res/layout/simple_spinner_dropdown_item.xml" value="0.17135416666666667" />
         <entry key="..\:/android apps/SEProject/app/src/main/res/drawable-v24/eye.xml" value="0.1" />
         <entry key="..\:/android apps/SEProject/app/src/main/res/drawable-v24/ic_baseline_qr_code_24.xml" value="0.3651041666666667" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/drawable-v24/ic_gallery.xml" value="0.1555" />
         <entry key="..\:/android apps/SEProject/app/src/main/res/drawable-v24/ic_google.xml" value="0.3651041666666667" />
         <entry key="..\:/android apps/SEProject/app/src/main/res/drawable-v24/ic_outline_email_24.xml" value="0.3651041666666667" />
         <entry key="..\:/android apps/SEProject/app/src/main/res/drawable-v24/ic_right_round.xml" value="0.3651041666666667" />
         <entry key="..\:/android apps/SEProject/app/src/main/res/drawable-v24/ic_search.xml" value="0.3651041666666667" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/drawable/bottom_dialog_bg.xml" value="0.285" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/drawable/filling_fast_bg.xml" value="0.2015" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/drawable/gradient_bg.xml" value="0.285" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/drawable/ic_chevron_left.xml" value="0.18" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/drawable/ic_gallery.xml" value="0.1005" />
         <entry key="..\:/android apps/SEProject/app/src/main/res/drawable/ic_heart_filled.xml" value="0.2205" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/drawable/ic_long_arrow_left.xml" value="0.1655" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/drawable/round_btn.xml" value="0.285" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/drawable/spinner_bg.xml" value="0.18" />
         <entry key="..\:/android apps/SEProject/app/src/main/res/drawable/stroked_bg.xml" value="0.3651041666666667" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/layout/activity_bill.xml" value="0.33" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/layout/activity_event_detail.xml" value="0.25" />
         <entry key="..\:/android apps/SEProject/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/android apps/SEProject/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/layout/activity_main.xml" value="0.11878453038674033" />
         <entry key="..\:/android apps/SEProject/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/layout/event_item.xml" value="0.22" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/layout/event_item_with_event_type.xml" value="0.30572916666666666" />
         <entry key="..\:/android apps/SEProject/app/src/main/res/layout/image_item.xml" value="0.3489583333333333" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/layout/list_view_item.xml" value="0.24322916666666666" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/layout/organizer_layout.xml" value="0.16" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/layout/spinner_value_layout.xml" value="0.2" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/layout/test.xml" value="0.25" />
+        <entry key="..\:/android apps/SEProject/app/src/main/res/layout/user_profile_dialog.xml" value="0.25" />
       </map>
     </option>
   </component>

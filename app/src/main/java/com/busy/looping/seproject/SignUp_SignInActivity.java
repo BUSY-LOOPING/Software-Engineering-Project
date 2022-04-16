@@ -147,7 +147,11 @@ public class SignUp_SignInActivity extends AppCompatActivity {
     }
 
     public static boolean signInToDB(Context context, String email, String password) {
-        return LoginDatabase.getInstance(context).containsEmailPassword(email, password);
+        boolean res = LoginDatabase.getInstance(context).containsEmailPassword(email, password);
+        if (res) {
+            LoginDatabase.getInstance(context).setCurrentSignedIn(email);
+        }
+        return res;
     }
 
     private boolean validateFields() {
@@ -162,8 +166,7 @@ public class SignUp_SignInActivity extends AppCompatActivity {
     }
 
     public static boolean signUpToDB(Context context, String email, String password, boolean isCustomer) {
-
-        return LoginDatabase.getInstance(context).insertData(email, password, isCustomer ? "user" : "admin");
+        return LoginDatabase.getInstance(context).insertData(email, password, isCustomer ? "user" : "organizer");
     }
 
     private void customerClicked() {
