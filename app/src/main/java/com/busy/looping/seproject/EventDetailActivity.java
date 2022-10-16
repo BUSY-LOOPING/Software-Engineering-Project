@@ -2,12 +2,14 @@ package com.busy.looping.seproject;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,6 +27,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.security.SecureRandom;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -37,10 +40,13 @@ public class EventDetailActivity extends AppCompatActivity {
     private UserModel signedInUser;
     private BookingModel bookingModel = null;
     private NumberPicker numberPicker;
+    private TextView priceText;
     private ActivityEventDetailBinding binding;
     private double priceAllTickets;
     private int noTickets;
     private boolean isOrganizer = false;
+    private final String pattern = "##,##,###.##";
+    private DecimalFormat decimalFormat ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,18 +104,20 @@ public class EventDetailActivity extends AppCompatActivity {
             public void onValueChange(NumberPicker numberPicker, int oldVal, int newVal) {
                 noTickets = newVal;
                 priceAllTickets = (Double.parseDouble(eventModel.getPrice()) * newVal);
-                binding.priceTxt.setText("\u20B9 " + priceAllTickets);
+                priceText.setText("\u20B9 " + decimalFormat.format(priceAllTickets));
             }
         });
     }
 
     private void init() {
+        decimalFormat = new DecimalFormat(pattern);
         img = binding.img;
         numberPicker = binding.noTicketsPicker;
         signedInUser = LoginDatabase.getInstance(this).getCurrentSignedInUser();
         eventModel = (EventModel) getIntent().getSerializableExtra("event");
         isOrganizer = getIntent().getBooleanExtra("isOrganizer", false);
         button = binding.bookBtn;
+        priceText = binding.priceTxt;
         bind(BR.eventVar, eventModel);
         priceAllTickets = Double.parseDouble(eventModel.getPrice());
         noTickets = 1;
@@ -143,6 +151,8 @@ public class EventDetailActivity extends AppCompatActivity {
             binding.availableTxt.setText("Available  0" );
             numberPicker.setMaxValue(1);
             if (!isOrganizer) {
+                priceText.setText("\u20B9 " + decimalFormat.format(priceAllTickets));
+                priceText.setPaintFlags(binding.priceTxt.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                 numberPicker.setEnabled(false);
                 button.setEnabled(false);
                 button.setAlpha(0.5f);
@@ -223,6 +233,8 @@ public class EventDetailActivity extends AppCompatActivity {
                 binding.availableTxt.setText("Available  0" );
                 numberPicker.setMaxValue(1);
                 if (!isOrganizer) {
+                    priceText.setText("\u20B9 " + decimalFormat.format(Double.parseDouble(eventModel.getPrice())));
+                    priceText.setPaintFlags(binding.priceTxt.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                     numberPicker.setEnabled(false);
                     button.setEnabled(false);
                     button.setAlpha(0.5f);
